@@ -1,0 +1,31 @@
+.player{
+    width:600px;
+    position: relative;
+}
+video,
+.timing{
+    width:100%;
+}
+
+.prev{
+    position: absolute;
+    display: none;
+    top: 75%;
+    border: 1px solid #fff;
+    z-index: 10;
+}
+
+.prev:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -6px;
+    left: 10px;
+    border-right: #fff solid 2px;
+    border-bottom: #fff solid 2px;
+    z-index: -1;
+    box-shadow: 0 -1px 2px #000;
+}

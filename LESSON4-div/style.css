@@ -1,0 +1,210 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #1F3F68;
+}
+
+h1 {
+    font-size: 64px;
+    color: #1F3F68;
+}
+
+h3.header {
+    font-size: 36px;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.header-h4 {
+    font-size: 20px;
+    line-height: 30px;
+    color: #1F3F68;
+}
+
+input, 
+textarea {
+    border: 1px solid #356EAD;
+    box-sizing: border-box;
+    border-radius: 10px;
+    opacity: 0.4;
+}
+
+.send-button {
+    background: #5A98D0;
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.container {
+    width:80%;
+    margin: 0 10%;
+}
+
+.red {
+    border:5px solid red;
+}
+
+.purple{
+    border:5px solid #E65DE8;
+}
+
+.pink{
+    border:5px solid #ffc0e9;
+}
+
+.green {
+    border:5px solid forestgreen;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+.light-blue {
+    border:5px solid lightblue;
+}
+
+.fuchsia {
+    border:5px solid fuchsia;
+}
+
+.light-grey {
+    border:5px solid lightgrey;
+}
+
+.light-green {
+    border: 5px solid rgb(218,255,171);
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.margin-top-10 {
+    margin-top:10px;
+}
+
+.margin-top-20 {
+    margin-top:20px;
+}
+
+.margin-top-30 {
+    margin-top:30px;
+}
+
+.margin-top-40 {
+    margin-top:40px;
+}
+
+.margin-top-60 {
+    margin-top:60px;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 30px;
+}
+
+.margin-bottom-350 {
+    margin-bottom: 350px;
+}
+
+.half-width {
+    width:50%;
+}
+
+.product-float {
+    float:left;
+    width: 30%;
+}
+
+.float-left{
+    float: left;
+}
+
+.padding-30 {
+    padding:30px;
+}
+
+.padding-40 {
+    padding:40px;
+}
+
+.clear {
+    clear:both;
+}
+
+.center {
+    text-align: center;
+}
+
+hr {
+    color: rgb(134,153,185);
+    border: 2px solid rgb(134,153,185);
+    margin: 20px 0;
+}
+
+.width-45 {
+    width:45%;
+}
+
+.width-50 {
+    width:50%;
+}
+
+.contacts-h2 {
+    font-weight: 500;
+    font-size: 44px;
+    text-align: center;
+}
+
+.contacts-list > * {
+    display: inline-block;
+}
+
+/*contacts*/
+.conts-top-wrap > div {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.menu ul {
+    padding-left: 0;
+}
+
+.inline-block > li {
+    display:inline-block;
+}
+
+form label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.form-wrapper{
+    margin: 60px auto;
+}
+
+.big-shadow {
+    box-shadow: 0 0 40px #eee;
+}
