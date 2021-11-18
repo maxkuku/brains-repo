@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2f3a13ad1a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="top-wrap">
+        <div class="container">
+            <div class="container__inner">
+                <div class="header__left-part">
+                    <div class="header__logo">
+                        <a href="index.html">
+                            <img src="img/logo.jpg" alt="Main page"><span class="header__logo-name">BRAN<span
+                                class="pink">D</span></span>
+                        </a>
+                    </div>
+                    <label for="top-search">
+                        <input type="checkbox" id="top-search">
+                        <img src="img/search222.svg" alt="search">
+                        <div class="header__search">
+                            <div class="header__search-block">
+                                <form id="search">
+
+
+                                    <details class="select">
+                                        <summary id="suggest">Browse</summary>
+                                        <div id="div-suggest">
+                                            <ul>
+                                                <li><a href="single_page.html">Single Page</a></li>
+                                                <li><a href="#">Women</a></li>
+                                                <li><a href="#">Kids</a></li>
+                                                <li><a href="#">Accoseriese</a></li>
+                                                <li><a href="#">Featured</a></li>
+                                                <li><a href="#">Hot Deals</a></li>
+                                            </ul>
+                                        </div>
+                                    </details>
+                                    <input type="search" name="top_search" placeholder="Search for item">
+                                    <input type="submit" value="">
+                                </form>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div class="header__right-part">
+                    <details class="basket">
+                        <summary>
+                            <img src="img/basket.svg" alt="Basket">
+                        </summary>
+                        <div class="megabox">
+                            <div class="mini-basket-item">
+                                <img src="img/basket1.jpg" alt="Item 1">
+                                <div class="mini-basket-item-defs">
+                                    <div class="basket-item-annot">
+                                        <div class="basket-item-name">Rebox Zane</div>
+                                        <div class="basket-item-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="basket-item-price pink">
+                                            <span class="quan">1</span>
+                                            <i class="fas fa-times"></i>
+                                            <span class="pr">$250</span>
+                                        </div>
+                                    </div>
+                                    <div class="basket-item-del">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mini-basket-item">
+                                <img src="img/basket2.jpg" alt="Item 2">
+                                <div class="mini-basket-item-defs">
+                                    <div class="basket-item-annot">
+                                        <div class="basket-item-name">Rebox Zane</div>
+                                        <div class="basket-item-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="basket-item-price pink">
+                                            <span class="quan">1</span>
+                                            <i class="fas fa-times"></i>
+                                            <span class="pr">$250</span>
+                                        </div>
+                                    </div>
+                                    <div class="basket-item-del">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mini-basket-total">
+                                <span>TOTAL</span>
+                                <span>$500.00</span>
+                            </div>
+                            <div class="basket-buttons">
+                                <button id="checkout" class="button-vice">CHECKOUT</button>
+                                <button id="go_to_cart" class="bw-button">GO TO CART</button>
+                            </div>
+                        </div>
+                    </details>
+                    <div class="my_account">
+                        <button id="my_account" class="button"><span>My Account</span><i
+                                class="fal fa-user account"></i><i class="fas fa-sort-down"></i></button>
+                    </div>
+                </div>
+                <div class="header__rightmost-part">
+                    <div class="burger-wrap">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <label for="menu-check" id="label-for-menu-check">
+            <input type="checkbox" id="menu-check" style="display: none">
+            <img class="burger-img lines" src="img/burger.svg" alt="Mob Menu Toggle">
+            <img class="burger-img cross" src="img/close-2.svg" alt="Mob Menu Toggle">
+            <nav class="menu">
+                <ul>
+                    <li class="menu-list"><a href="index.html" class="link">Home</a></li>
+                    <li class="menu-list parent"><a href="single_page.html" class="link">Single Page</a>
+                        <label for="mega-expand1" class="mega-label">
+                            <input type="checkbox" id="mega-expand1" style="display: none">
+                            <i class="fas fa-sort-down submenu-expand" aria-hidden="true"></i>
+                            <div class="megabox">
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Trousers</a></li>
+                                        <li class="mega-second-level"><a href="#">T-Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Pull-overs</a></li>
+                                        <li class="mega-second-level"><a href="#">Blasers</a></li>
+                                        <li class="mega-second-level"><a href="#">Lingerie</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Men</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Coats</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="menu-list parent"><a href="product.html" class="link">Product</a>
+                        <label for="mega-expand2" class="mega-label">
+                            <input type="checkbox" id="mega-expand2" style="display: none">
+                            <i class="fas fa-sort-down submenu-expand" aria-hidden="true"></i>
+                            <div class="megabox">
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Trousers</a></li>
+                                        <li class="mega-second-level"><a href="#">T-Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Pull-overs</a></li>
+                                        <li class="mega-second-level"><a href="#">Blasers</a></li>
+                                        <li class="mega-second-level"><a href="#">Lingerie</a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Coats</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+
+                                    </ul>
+                                    <div class="menu-box-list-unit-img">
+                                        <a class="ssale-link" href="#">
+                                            <img src="img/ssale.jpg" alt="super sale pic">
+                                            <p><strong>super</strong></p>
+                                            <p><strong>sale!</strong></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="menu-list parent"><a href="shopping_cart.html" class="link">Shopping Cart</a>
+                        <label for="mega-expand3" class="mega-label">
+                            <input type="checkbox" id="mega-expand3" style="display: none">
+                            <i class="fas fa-sort-down submenu-expand" aria-hidden="true"></i>
+                            <div class="megabox">
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Trousers</a></li>
+                                        <li class="mega-second-level"><a href="#">T-Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Pull-overs</a></li>
+                                        <li class="mega-second-level"><a href="#">Blasers</a></li>
+                                        <li class="mega-second-level"><a href="#">Lingerie</a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Coats</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+
+                                    </ul>
+                                    <div class="menu-box-list-unit-img">
+                                        <a class="ssale-link" href="#">
+                                            <img src="img/ssale.jpg" alt="super sale pic">
+                                            <p><strong>super</strong></p>
+                                            <p><strong>sale!</strong></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="menu-list parent last"><a href="checkout.html">Checkout</a>
+                        <label for="mega-expand4" class="mega-label">
+                            <input type="checkbox" id="mega-expand4" style="display: none">
+                            <i class="fas fa-sort-down submenu-expand" aria-hidden="true"></i>
+                            <div class="megabox">
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Trousers</a></li>
+                                        <li class="mega-second-level"><a href="#">T-Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Pull-overs</a></li>
+                                        <li class="mega-second-level"><a href="#">Blasers</a></li>
+                                        <li class="mega-second-level"><a href="#">Lingerie</a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Coats</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+
+                                    </ul>
+                                    <div class="menu-box-list-unit-img">
+                                        <a class="ssale-link" href="#">
+                                            <img src="img/ssale.jpg" alt="super sale pic">
+                                            <p><strong>super</strong></p>
+                                            <p><strong>sale!</strong></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="menu-list parent last"><a href="#" class="link">Featured</a>
+                        <label for="mega-expand5" class="mega-label">
+                            <input type="checkbox" id="mega-expand5" style="display: none">
+                            <i class="fas fa-sort-down submenu-expand" aria-hidden="true"></i>
+                            <div class="megabox">
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Trousers</a></li>
+                                        <li class="mega-second-level"><a href="#">T-Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Pull-overs</a></li>
+                                        <li class="mega-second-level"><a href="#">Blasers</a></li>
+                                        <li class="mega-second-level"><a href="#">Lingerie</a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Coats</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+
+                                    </ul>
+                                    <div class="menu-box-list-unit-img">
+                                        <a class="ssale-link" href="#">
+                                            <img src="img/ssale.jpg" alt="super sale pic">
+                                            <p><strong>super</strong></p>
+                                            <p><strong>sale!</strong></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="menu-list parent last"><a href="#" class="link">Hot Deals</a>
+                        <label for="mega-expand6" class="mega-label">
+                            <input type="checkbox" id="mega-expand6" style="display: none">
+                            <i class="fas fa-sort-down submenu-expand" aria-hidden="true"></i>
+                            <div class="megabox">
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Trousers</a></li>
+                                        <li class="mega-second-level"><a href="#">T-Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Pull-overs</a></li>
+                                        <li class="mega-second-level"><a href="#">Blasers</a></li>
+                                        <li class="mega-second-level"><a href="#">Lingerie</a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Shirts</a></li>
+                                        <li class="mega-second-level"><a href="#">Coats</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-item">
+                                    <h3 class="mega-heading">Women</h3>
+                                    <ul>
+                                        <li class="mega-second-level"><a href="#">Dresses</a></li>
+                                        <li class="mega-second-level"><a href="#">Shirts</a></li>
+
+                                    </ul>
+                                    <div class="menu-box-list-unit-img">
+                                        <a class="ssale-link" href="#">
+                                            <img src="img/ssale.jpg" alt="super sale pic">
+                                            <p><strong>super</strong></p>
+                                            <p><strong>sale!</strong></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </nav>
+        </label>
+    </div>
+</div>
+    <div class="content head-wide">
+        <div class="container">
+            <div class="head-wide-wrap">
+                <h1 class="pink">Shopping Cart</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html"><span>HOME</span></a><span class="delimiter">/</span>
+                    <span class="pink">SHOPPING CART</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="shopping-cart-wrap">
+        <div class="container">
+            <div class="head-line">
+                <div class="cart-image-and-description">Product Details</div>
+                <div class="cart-price">Unite Price</div>
+                <div class="cart-quan">Quantity</div>
+                <div class="cart-ship">Shipping</div>
+                <div class="cart-subtotal">Subtotal</div>
+                <div class="cart-action">Action</div>
+            </div>
+            <div class="item-line">
+                <div class="cart-image-and-description">
+                    <img src="img/cart/cart1.jpg" alt="Item Name">
+                    <div class="item-description">
+                        <p class="item-title">Mango People T-shirt</p>
+                        <span class="item-color">Color: <span>Red</span></span>
+                        <span class="item-size">Size: <span>XL</span></span>
+                    </div>
+                </div>
+                <div class="cart-price">$150</div>
+                <div class="cart-quan"><input type="number" name="cart-quan" value="2" min="1"></div>
+                <div class="cart-ship">FREE</div>
+                <div class="cart-subtotal">$300</div>
+                <div class="cart-action"><i class="fas fa-times-circle"></i></div>
+            </div>
+            <div class="item-line">
+                <div class="cart-image-and-description">
+                    <img src="img/cart/cart2.jpg" alt="Item Name">
+                    <div class="item-description">
+                        <p class="item-title">Mango People T-shirt</p>
+                        <span class="item-color">Color: <span>Red</span></span>
+                        <span class="item-size">Size: <span>XL</span></span>
+                    </div>
+                </div>
+                <div class="cart-price">$150</div>
+                <div class="cart-quan"><input type="number" name="cart-quan" value="2" min="1"></div>
+                <div class="cart-ship">FREE</div>
+                <div class="cart-subtotal">$300</div>
+                <div class="cart-action"><i class="fas fa-times-circle"></i></div>
+            </div>
+            <div class="item-line">
+                <div class="cart-image-and-description">
+                    <img src="img/cart/cart3.jpg" alt="Item Name">
+                    <div class="item-description">
+                        <p class="item-title">Mango People T-shirt</p>
+                        <span class="item-color">Color: <span>Red</span></span>
+                        <span class="item-size">Size: <span>XL</span></span>
+                    </div>
+                </div>
+                <div class="cart-price">$150</div>
+                <div class="cart-quan"><input type="number" name="cart-quan" value="2" min="1"></div>
+                <div class="cart-ship">FREE</div>
+                <div class="cart-subtotal">$300</div>
+                <div class="cart-action"><i class="fas fa-times-circle"></i></div>
+            </div>
+
+            <div class="cart-buttons">
+                <button class="bw-button">CLEAR SHOPPING CART</button>
+                <button class="bw-button">CONTINUE SHOPPING</button>
+            </div>
+
+
+            <div class="shipping">
+                <div class="shipping-part">
+                    <div class="field-title">Shipping Address</div>
+                    <label for="country">
+                        <select name="country" id="country">
+                            <option value="Bangladesh" selected>Bangladesh</option>
+                            <option value="Djibouty">Djibouty</option>
+                            <option value="France">France</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Yemen">Yemen</option>
+                        </select>
+                    </label> 
+                    <label for="state">
+                        <input type="text" name="state" placeholder="State">
+                    </label>
+                    <label for="zip">
+                        <input id="zip" type="text" name="zip" placeholder="Postcode/Zip">
+                    </label>
+                    <button name="quote" class="bw-button-small">Get a Quote</button>
+                </div>
+                <div class="shipping-part">
+                    <div class="field-title">Coupon Discount</div>
+                    <div class="shipping-subtitle">Enter your coupon code if you have one</div>
+                    <label for="state">
+                        <input id="state" type="text" name="coupon" placeholder="Coupon">
+                    </label>
+                    <button name="coupon-apply" class="bw-button-small">Apply Coupon</button>
+                </div>
+                <div class="shipping-part">
+                    <div class="grayed">
+                        <div class="shipping-subtitle"><span class="sub-total">Sub total</span><span>$900</span></div>
+                        <div class="total-subtitle"><span class="grand-total">Grand total</span><span class="pink">$900</span></div>
+                        <button type="submit" name="proceed" class="button">Proceed to checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+    <div class="seasand">
+        <div class="container">
+            <div class="sand-wrap">
+                <div class="sand-left">
+                    <div class="figures">
+                        <div class="fig-all-wrap">
+                            <figure>
+                                <img src="img/bin-burhan.png" alt="Bin Burhan">
+                                <div class="fig-wrap">
+                                    <div class="quot">
+                                        <em>”Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                                            a pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed
+                                            pretium”</em>
+                                    </div>
+                                    <figcaption class="pink">
+                                        Bin Burhan
+                                    </figcaption>
+                                    <sub>Dhaka, Bd</sub><br>
+                                    <div class="but pink"></div>
+                                    <div class="but"></div>
+                                    <div class="but"></div>
+                                </div>
+                            </figure>
+                            <figure>
+                                <img src="img/bin-burhan.png" alt="Bin Burhan">
+                                <div class="fig-wrap">
+                                    <div class="quot">
+                                        <em>”Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                                            a pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed
+                                            pretium”</em>
+                                    </div>
+                                    <figcaption class="pink">
+                                        Bin Burhan
+                                    </figcaption>
+                                    <sub>Dhaka, Bd</sub><br>
+                                    <div class="but"></div>
+                                    <div class="but pink"></div>
+                                    <div class="but"></div>
+                                </div>
+                            </figure>
+                            <figure>
+                                <img src="img/bin-burhan.png" alt="Bin Burhan">
+                                <div class="fig-wrap">
+                                    <div class="quot">
+                                        <em>”Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                                            a pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed
+                                            pretium”</em>
+                                    </div>
+                                    <figcaption class="pink">
+                                        Bin Burhan
+                                    </figcaption>
+                                    <sub>Dhaka, Bd</sub><br>
+                                    <div class="but"></div>
+                                    <div class="but"></div>
+                                    <div class="but pink"></div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="sand-right">
+                    <div class="subscribe">
+                        <h3>Subscribe</h3>
+                        <p class="under-subscribe">FOR OUR NEWLETTER AND PROMOTION</p>
+                        <form id="subscribe" action="#">
+                            <input id="sub-email" type="text" name="sub-email" placeholder="Enter Your Email">
+                            <input type="submit" id="sub-submit" name="sub-submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="logo-bottom">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="img/logo.jpg" alt="Main page"><span class="header__logo-name">BRAN<span
+                                class="pink">D</span></span>
+                    </a>
+                </div>
+                <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally
+                    syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded
+                    array of processes and cross-unit partnerships. </p>
+                <p>Efficiently plagiarize 24/365 action items and focused infomediaries.
+                    Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+            </div>
+            <div class="triple-bottom-menu">
+                <div class="menu-column">
+                    <p class="pink">COMPANY</p>
+                    <ul class="bot-menu-ul">
+                        <li class="bot-li"><a href="index.html" class="bot-a">Home</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">Shop</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">About</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">How It Works</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="menu-column">
+                    <p class="pink">INFORMATION</p>
+                    <ul class="bot-menu-ul">
+                        <li class="bot-li"><a href="#" class="bot-a">Teams & Conditions</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">Privacy Policy</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">How To Buy</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">How to Sell</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">Promotion</a></li>
+                    </ul>
+                </div>
+                <div class="menu-column">
+                    <p class="pink">SHOP CATEGORY</p>
+                    <ul class="bot-menu-ul">
+                        <li class="bot-li"><a href="checkout.html" class="bot-a">Checkout</a></li>
+                        <li class="bot-li"><a href="shopping_cart.html" class="bot-a">Shopping Cart</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">Child</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">Apparel</a></li>
+                        <li class="bot-li"><a href="#" class="bot-a">Brows All</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="container">
+            <span class="foot-copy">© 2017 Brand All Rights Reserved.</span>
+            <div class="soc">
+                <div class="socials f"><a href="#"><i class="fab fa-facebook-f"></i></a></div>
+                <div class="socials t"><a href="#"><i class="fab fa-twitter"></i></a></div>
+                <div class="socials in"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                <div class="socials p"><a href="#"><i class="fab fa-pinterest-p"></i></a></div>
+                <div class="socials g"><a href="#"><i class="fab fa-google-plus-g"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script-->
+    <script src="script.js"></script>
+
+</body>
