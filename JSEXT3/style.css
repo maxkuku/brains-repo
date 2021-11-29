@@ -1,0 +1,190 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.goods-list {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: 23% 23% 23% 23%;
+      grid-template-columns: 23% 23% 23% 23%;
+  grid-column-gap: 2%;
+  -ms-grid-rows: 440px;
+      grid-template-rows: 440px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.goods-list .goods-item {
+  text-align: center;
+}
+
+.goods-list .goods-item button {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  padding: 11px 21px 11px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 160%;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  cursor: pointer;
+  white-space: nowrap;
+  background: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: 0;
+  border-radius: 0;
+  color: #fff;
+  background-color: #62c0d1;
+  border: 1px solid #62c0d1;
+}
+
+.goods-list .goods-item button:hover {
+  background-color: #3bb0c5;
+  border-color: #3bb0c5;
+}
+
+.goods-list .goods-item img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+header {
+  display: block;
+}
+
+header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.mini-basket-wrap .fa-shopping-cart span {
+  font-family: sans-serif;
+  background: #e63409;
+  display: inline-block;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  position: relative;
+  top: -10px;
+  left: -5px;
+}
+
+.basket {
+  display: none;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  right: 40px;
+  width: 290px;
+  background: white;
+  padding: 20px;
+}
+
+.basket .basket-goods-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.basket .basket-goods-item .delete-from-basket {
+  display: block;
+  width: 19px;
+  height: 19px;
+  background: #d30707;
+  color: white;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.basket .basket-image-wrap {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
+}
+
+.basket .basket-image-wrap img {
+  width: 50px;
+}
+
+.basket .close-wrap {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.basket .summ {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.basket > div:last-of-type {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+}
+
+.basket .basket-item-wrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.goods-item p:after,
+.basket-item-wrap span.price:after,
+.summ span:after {
+  content: " руб.";
+}
+
+span.quantity {
+  margin-right: 10px;
+}
+
+span.quantity:after {
+  content: "шт.";
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,153 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    & *{
+        box-sizing: border-box;
+    }
+}
+
+.goods-list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-column-gap: 2%;
+    grid-template-rows: 440px;
+    align-items: center;
+    .goods-item{
+        text-align: center;
+        button{
+            position: relative;
+            display: inline-block;
+            height: auto;
+            padding: 11px 21px 11px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 160%;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            cursor: pointer;
+            white-space: nowrap;
+            background: none;
+            box-sizing: border-box;
+            text-shadow: none;
+            box-shadow: none;
+            transition: 0.3s;
+            outline: 0;
+            border-radius: 0;
+            color: #fff;
+            background-color: #62c0d1;
+            border: 1px solid #62c0d1;
+            &:hover{
+                background-color: #3bb0c5;
+                border-color: #3bb0c5;
+            }
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+        }
+    }
+}
+
+
+header{
+    display: block;
+    & > div{
+        display:flex;
+        justify-content: space-between;
+        padding:20px;
+    }
+}
+
+.hidden{
+    display:none;
+}
+
+.mini-basket-wrap{
+    .fa-shopping-cart span {
+        font-family: sans-serif;
+        background: #e63409;
+        display: inline-block;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 12px;
+        height: 16px;
+        width: 16px;
+        line-height: 16px;
+        position: relative;
+        top: -10px;
+        left: -5px;
+    }
+}
+
+.basket{
+    display:none;
+    position: absolute;
+    border: 1px solid rgba(0,0,0,.1);
+    right: 40px;
+    width: 290px;
+    background: white;
+    padding: 20px;
+    .basket-goods-item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .delete-from-basket {
+            display: block;
+            width: 19px;
+            height: 19px;
+            background: #d30707;
+            color: white;
+            line-height: 18px;
+            text-align: center;
+            border-radius: 50%;
+            cursor:pointer;
+        }
+    }
+    .basket-image-wrap {
+        flex: 0 0 50px;
+        img {
+            width: 50px;
+        }
+    }
+    .close-wrap {
+        text-align: right;
+        margin-bottom: 10px;
+    }
+    .summ {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    & > div:last-of-type {
+        flex: 0 0 20px;
+    }
+    .basket-item-wrap {
+        flex: 1 0 auto;
+    }
+    
+}
+
+
+
+.goods-item p:after,
+.basket-item-wrap span.price:after,
+.summ span:after{
+    content:" руб.";
+}
+
+span.quantity {
+    margin-right: 10px;
+    &:after{
+        content:"шт.";
+    }
+}
+
+
+
+
+
