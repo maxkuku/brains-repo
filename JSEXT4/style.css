@@ -30,7 +30,15 @@ body * {
   text-align: center;
 }
 
-.goods-list .goods-item button {
+.goods-list .goods-item img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+button,
+input[type="submit"] {
   position: relative;
   display: inline-block;
   height: auto;
@@ -58,16 +66,10 @@ body * {
   border: 1px solid #62c0d1;
 }
 
-.goods-list .goods-item button:hover {
+button:hover,
+input[type="submit"]:hover {
   background-color: #3bb0c5;
   border-color: #3bb0c5;
-}
-
-.goods-list .goods-item img {
-  width: 300px;
-  height: 300px;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 header {
@@ -86,6 +88,22 @@ header > div {
 
 .hidden {
   display: none;
+}
+
+.mini-basket-wrap .fa-shopping-cart span {
+  font-family: sans-serif;
+  background: #e63409;
+  display: inline-block;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  position: relative;
+  top: -10px;
+  left: -5px;
 }
 
 .basket {
@@ -146,9 +164,43 @@ header > div {
           justify-content: space-between;
 }
 
+.basket > div:last-of-type {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+}
+
+.basket .basket-item-wrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
 .goods-item p:after,
-.basket-item-wrap span:after,
+.basket-item-wrap span.price:after,
 .summ span:after {
   content: " руб.";
+}
+
+span.quantity {
+  margin-right: 10px;
+}
+
+span.quantity:after {
+  content: "шт.";
+}
+
+footer {
+  margin: 40px auto;
+  max-width: 93%;
+}
+
+footer form div {
+  margin: 10px 0;
+}
+
+footer form input, footer form textarea {
+  border: 1px solid #c0c0c0;
+  padding: 5px;
 }
 /*# sourceMappingURL=style.css.map */
