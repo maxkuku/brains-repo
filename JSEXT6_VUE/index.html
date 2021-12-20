@@ -28,7 +28,7 @@
 
             <div class="mini-basket">
               
-              <cart-list v-bind:basketgoods="basketgoods" v-bind:key="basketgoods.id_product"></cart-list>
+              <cart-list v-on:delete="onDelete" v-bind:basketgoods="basketgoods" v-bind:key="basketgoods.id_product"></cart-list>
 
               <div class="summ">ИТОГО: <span>{{ cart.amount }}</span></div>
             </div>
@@ -41,6 +41,9 @@
 
 
     <main>
+
+
+
       <template v-if="filteredGoods.length > 0">
         <good-list 
           v-bind:filteredGoods="filteredGoods" 

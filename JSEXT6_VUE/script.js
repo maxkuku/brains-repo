@@ -1,4 +1,5 @@
 const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/'
+
 function conlog(a) {console.log(a);}
 
 
@@ -10,14 +11,15 @@ Vue.component('search', {
       v-on:click="onClick"><i class="fas fa-search"></i></button>
   </div>
   `,
-  data() {
+  data: () => {
     return {
       searchString: ''
     }
   },  
   methods: {
     onClick(){
-      this.$emit('search', this.searchString)
+      conlog(this)
+      this.$emit('search', this.searchString);
     }
   }
 });
@@ -46,7 +48,16 @@ Vue.component('cart-item', {
   props: ['data'],
   methods: {
     onClick() {
-      this.$emit('delete', this.data)
+      fetch(`${API_URL}getBasket.json`, {
+        /* method: "POST",
+        headers: {
+          'Content-Type': 'application/JSON'
+        },
+        body: JSON.stringify(this.data) */
+      })
+        .then(() => {
+          this.$emit('delete', this.data)
+        })
     }
   }
 });
@@ -76,11 +87,22 @@ Vue.component('good-item', {
   template: `<div class="goods-item">
     <img src="#">
     <h3>{{ data.product_name }}</h3>
-    <p>{{ data.price }}</p><button>В корзину</button>
+    <p>{{ data.price }}</p><button v-on:click="onClick">В корзину</button>
   </div>`,
   props: ['data'],
   methods: {
-
+    onClick() {
+      fetch(`${API_URL}getBasket.json`, {
+        /* method: "POST",
+        headers: {
+          'Content-Type': 'application/JSON'
+        },
+        body: JSON.stringify(this.data) */
+      })
+        .then(() => {
+          this.$emit('add', this.data)
+        })
+    }
   }
 });
 
@@ -93,18 +115,17 @@ Vue.component('good-list', {
           v-for="good of filteredgoods" 
           v-bind:key="good.id_product"
           v-bind:data="good"
-          v-on:add="onAdd"></good-item>
+          v-on:add="onAdd"
+          ></good-item>
       </div>
     </div>`,
     props: ['filteredgoods'],
     methods: {
       onAdd(good) {
-        this.$emit('add', good)
+        this.$emit('add', good);
       }
     }
 });
-
-
 
 
 
@@ -124,7 +145,6 @@ const app = new Vue({
       fetch(`${API_URL}catalogData.json`)
         .then((request) => request.json())
         .then((data) => {
-
           this.goods = data;
           this.filteredGoods = data;
         });
@@ -137,18 +157,20 @@ const app = new Vue({
           this.basketgoods = data.contents;
         })
     },
-    onSearch(searchString){
-      const regex = new RegExp(searchString, 'i');
-      this.filteredGoods = this.goods.filter((good) => regex.test(good.title))
-    },
     onAdd(good) {
+      document.querySelector('.fa-shopping-cart span').textContent++;
       this.basketgoods.push(good)
     },
     onDelete(good){
       const idx = this.basketgoods.findIndex((item) => item.id === good.id)
       if(idx >= 0) {
+        document.querySelector('.fa-shopping-cart span').textContent--;
         this.cart = [...this.basketgoods.slice(0, idx), ...this.basketgoods.slice(idx + 1)]
       }
+    },
+    onSearch(searchString){
+      const regex = new RegExp(searchString, 'i');
+      this.filteredGoods = this.goods.filter((good) => regex.test(good.product_name))
     },
     onToggleCart() {
       this.isVisibleCart = !this.isVisibleCart
