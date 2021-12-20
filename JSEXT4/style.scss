@@ -16,39 +16,42 @@ body{
     align-items: center;
     .goods-item{
         text-align: center;
-        button{
-            position: relative;
-            display: inline-block;
-            height: auto;
-            padding: 11px 21px 11px;
-            text-decoration: none;
-            text-align: center;
-            line-height: 160%;
-            font-size: 14px;
-            font-weight: normal;
-            font-style: normal;
-            cursor: pointer;
-            white-space: nowrap;
-            background: none;
-            box-sizing: border-box;
-            text-shadow: none;
-            box-shadow: none;
-            transition: 0.3s;
-            outline: 0;
-            border-radius: 0;
-            color: #fff;
-            background-color: #62c0d1;
-            border: 1px solid #62c0d1;
-            &:hover{
-                background-color: #3bb0c5;
-                border-color: #3bb0c5;
-            }
-        }
+        
         img {
             width: 300px;
             height: 300px;
             object-fit: contain;
         }
+    }
+}
+
+button,
+input[type="submit"] {
+    position: relative;
+    display: inline-block;
+    height: auto;
+    padding: 11px 21px 11px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 160%;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    cursor: pointer;
+    white-space: nowrap;
+    background: none;
+    box-sizing: border-box;
+    text-shadow: none;
+    box-shadow: none;
+    transition: 0.3s;
+    outline: 0;
+    border-radius: 0;
+    color: #fff;
+    background-color: #62c0d1;
+    border: 1px solid #62c0d1;
+    &:hover{
+        background-color: #3bb0c5;
+        border-color: #3bb0c5;
     }
 }
 
@@ -64,6 +67,24 @@ header{
 
 .hidden{
     display:none;
+}
+
+.mini-basket-wrap{
+    .fa-shopping-cart span {
+        font-family: sans-serif;
+        background: #e63409;
+        display: inline-block;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 12px;
+        height: 16px;
+        width: 16px;
+        line-height: 16px;
+        position: relative;
+        top: -10px;
+        left: -5px;
+    }
 }
 
 .basket{
@@ -105,15 +126,46 @@ header{
         display: flex;
         justify-content: space-between;
     }
+    & > div:last-of-type {
+        flex: 0 0 20px;
+    }
+    .basket-item-wrap {
+        flex: 1 0 auto;
+    }
+    
 }
 
 
 
 .goods-item p:after,
-.basket-item-wrap span:after,
+.basket-item-wrap span.price:after,
 .summ span:after{
     content:" руб.";
 }
+
+
+span.quantity {
+    margin-right: 10px;
+    &:after{
+        content:"шт.";
+    }
+}
+
+footer {
+    margin: 40px auto;
+    max-width: 93%;
+    form {
+        div{
+            margin: 10px 0;
+        }
+        input, textarea{
+            border: 1px solid #c0c0c0;
+            padding: 5px;
+        }
+    }
+}
+
+
 
 
 
