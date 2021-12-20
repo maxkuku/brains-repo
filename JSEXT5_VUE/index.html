@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>eShop</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script async src="https://kit.fontawesome.com/2f3a13ad1a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+  <header>
+    <div>
+      <div>
+        <a href="#">Главная</a>
+      </div>
+      <div class="search-wrap">
+        <div>
+          <input v-model="searchLine" type="search" name="s" placeholder="Поиск"><button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+        
+      </div>
+      <div class="mini-basket-wrap">
+        <i v-on:click="isVisibleCart = !isVisibleCart" class="fas fa-shopping-cart"><span>{{ basketCount }}</span></i>
+        <div class="basket" v-if="isVisibleCart">
+
+          <div class="mini-basket"><div class="close-wrap"><!--span class="close">&times;</span--></div>
+
+
+          <div v-for="bgood of basketGoods" v-bind:id="bgood.id_product" class="basket-goods-item">
+            <div class="basket-image-wrap">
+              <img src="#">
+            </div>
+            <div class="basket-item-wrap">
+              <div class="baket-item-title">{{ bgood.product_name }}</div>
+              <span class="quantity">{{ bgood.quantity }}</span>
+              <span class="price">{{ bgood.price }}</span>
+            </div>
+            <div>
+              <span class="delete-from-basket" onclick="">&times;</span>
+            </div>
+          </div>
+
+          <div class="summ">ИТОГО: <span>{{ basketAmount }}</span></div></div>
+
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <main>
+
+    <template v-if="this.filteredGoods.length > 0">  
+      <div class="goods-list">
+
+        <div class="goods-item" v-for="good of filteredGoods" v-bind:id="good.id_product"><img src="#"><h3>{{ good.product_name }}</h3><p>{{ good.price }}</p><button>В корзину</button></div>
+        
+      </div>
+    </template>
+    <template v-else>
+      <h2>Товаров нет</h2>
+    </template>
+
+  </main>
+  <footer>
+  </footer>
+</div><!--app-->
+
+  <script src="script.js"></script>
+</body>
+
+</html>

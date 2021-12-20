@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>eShop</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script async src="https://kit.fontawesome.com/2f3a13ad1a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+
+
+
+    <header>
+      <div>
+        <div>
+          <a href="#">Главная</a>
+        </div>
+        <div class="search-wrap">
+          <search v-on:search="onSearch"></search>
+
+        </div>
+        <div class="mini-basket-wrap">
+          <i v-on:click="onToggleCart" class="fas fa-shopping-cart"><span>{{ cart.countGoods }}</span></i>
+          <div class="basket" v-if="isVisibleCart" v-bind:list="cart" v-on:delete="onDelete">
+
+            <div class="mini-basket">
+              
+              <cart-list v-on:delete="onDelete" v-bind:basketgoods="basketgoods" v-bind:key="basketgoods.id_product"></cart-list>
+
+              <div class="summ">ИТОГО: <span>{{ cart.amount }}</span></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+    <main>
+
+
+
+      <template v-if="filteredGoods.length > 0">
+        <good-list 
+          v-bind:filteredGoods="filteredGoods" 
+          v-on:add="onAdd"></good-list>   
+      </template>
+      <template v-else>
+        <h2>Товаров нет</h2>
+      </template>
+    </main>
+
+
+
+    <footer>
+    </footer>
+  </div>
+  <!--app-->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
