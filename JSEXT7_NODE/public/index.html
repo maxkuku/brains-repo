@@ -24,11 +24,11 @@
         </div>
         <div class="mini-basket-wrap">
           <i v-on:click="onToggleCart" class="fas fa-shopping-cart"><!--span></span--></i>
-          <div class="basket" v-if="isVisibleCart" v-bind:basketgoods="basketgoods" v-on:delete="onDelete">
+          <div class="basket" v-if="isVisibleCart">
 
             <div class="mini-basket">
               
-              <cart-list v-on:delete="onDelete" v-bind:basketgoods="basketgoods" v-bind:key="basketgoods.id_product"></cart-list>
+              <cart-list v-on:delete="onDelete" v-bind:basketgoods="basketgoods" v-bind:key="basketgoods.id"></cart-list>
 
               <!--div class="summ">ИТОГО: <span></span></div-->
             </div>
