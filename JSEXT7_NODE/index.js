@@ -35,12 +35,22 @@ const { loadavg } = require('os');
 const path = require('path'); // правильно формировать пути до файлов
 
 const port = 3001
+
+
 //const data_dir = path.dirname('/Users/maksimkukushkin/Desktop/lesson7')
 const catalog_path = path.resolve(__dirname, './data/catalog.json')
 const cart_path = path.resolve(__dirname, './data/cart.json')
 const static_dir = path.resolve(__dirname, './public/')
 // const cors = require('cors')
+
+
+
+var cors = require('cors')
+
+
 const app = express()
+
+app.use(cors({origin: 'http://localhost:3001/'}))
 
 
 
@@ -79,7 +89,7 @@ app.post('/addToCart', (req,res) => {
     cart.push(item);
 
     fs.writeFile(cart_path, JSON.stringify(cart), (err) => {
-      console.log('done');
+      // console.log('done');
       res.end();
     });
   });
@@ -101,7 +111,7 @@ app.post('/removeFromCart', (req,res) => {
     
 
     fs.writeFile(cart_path, JSON.stringify(cart), (err) => { // ??? wrong
-      console.log('done');
+      console.log('del');
       res.end();
     });
   });

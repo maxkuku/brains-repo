@@ -50,7 +50,7 @@ Vue.component('cart-item', {
   props: ['data'],
   methods: {
     onClick() {
-      fetch(`${API_URL}removeFromCart`, {
+      fetch(`/removeFromCart`, {
           method: "POST",
           headers: {
             'Content-Type': 'application/JSON'
@@ -70,7 +70,7 @@ Vue.component('cart-list', {
   template: `
   <div class="in-cart-item">
     <cart-item v-for="good of basketgoods" 
-      v-bind:key="good.id_product" 
+      v-bind:key="good.id" 
       v-bind:data="good" 
       v-on:delete="onDelete"
       class="basket-goods-item"
@@ -96,7 +96,7 @@ Vue.component('good-item', {
   props: ['data'],
   methods: {
     onClick() {
-      fetch(`${API_URL}addToCart`, {
+      fetch(`/addToCart`, {
           method: "POST",
           headers: {
             'Content-Type': 'application/JSON'
@@ -117,7 +117,7 @@ Vue.component('good-list', {
       <div class="goods-list">
         <good-item 
           v-for="good of filteredgoods" 
-          v-bind:key="good.id_product"
+          v-bind:key="good.id"
           v-bind:data="good"
           v-on:add="onAdd"
           ></good-item>
@@ -139,28 +139,41 @@ const app = new Vue({
   el: '#app',
   data: {
     goods: [],
+    cart: [],
+    basketgoods: [],
     filteredgoods: [],
     isVisibleCart: false
   },
   methods: {
     loadGoods() {
-      fetch(`${API_URL}catalog.json`)
+      fetch(`/catalogData`)
         .then((request) => request.json())
         .then((data) => {
           this.goods = data;
           this.filteredgoods = data;
-        });
+        })
+        .catch((err) => console.log(`Catched error in goods list ${err}`))
     },
     loadBasket() {
-      fetch(`${API_URL}cart.json`)
+      fetch(`/cart`)
         .then((request) => request.json())
         .then((data) => {
-          this.basketgoods = data.contents;
+          this.basketgoods = data;
         })
+        .catch((err) => console.log(`Catched error in basket list ${err}`))
+    },
+    onAdd(good) {
+      this.cart.push(good)
+    },
+    onDelete(good){
+      const idx = this.cart.findIndex((item) => item.id === good.id)
+      if(idx >= 0) {
+        this.cart = [...this.cart.slice(0, idx), ...this.cart.slice(idx + 1)]
+      }
     },
     onSearch(searchString) {
       const regex = new RegExp(searchString, 'i');
-      this.filteredgoods = this.goods.filter((good) => regex.test(good.product_name))
+      this.filteredgoods = this.goods.filter((good) => regex.test(good.title))
     },
     onToggleCart() {
       this.isVisibleCart = !this.isVisibleCart
